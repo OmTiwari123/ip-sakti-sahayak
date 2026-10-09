@@ -34,12 +34,12 @@ Biological Diversity Act 2002) and international frameworks (PCT, Nagoya Protoco
 Keep answers focused and under 200 words unless the user asks for detail."""
 
 
-@app.get("/")
+@app.get("/api/")
 def read_root():
     return {"message": "IP-SAKTI Sahayak Backend is running"}
 
 
-@app.post("/chat")
+@app.post("/api/chat")
 async def chat(q: Query):
     try:
         response = client.chat.completions.create(
